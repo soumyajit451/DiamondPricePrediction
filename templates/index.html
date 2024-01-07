@@ -1,1 +1,39 @@
-<h1> this is the home page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Price Prediction</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            margin-top: 0; /* Remove default margin for h1 element */
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px; /* Adjust the margin to control the space between heading and form */
+        }
+    </style>
+    <!-- Your existing styles and external CSS links can go here -->
+</head>
+<body>
+    <h1>Welcome to Diamond Price Prediction</h1>
+
+    <form action="{{ url_for('predict_datapoint') }}" method="POST">
+        <label for="search_query">Search:</label>
+        <br>
+        <input type="submit" value="Click & Predict">
+    </form>
+
+    <!-- Your existing content can go here -->
+</body>
+</html>
