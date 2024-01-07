@@ -35,9 +35,9 @@ def predict_datapoint():
             final_new_data=data.get_data_as_dataframe()
             predict_pipeline=PredictPipeline()
             pred=predict_pipeline.predict(final_new_data)
-            search_query = request.form.get('search_query', '')
-            results=round(pred[0],2)         
-            return render_template('form.html',final_result=results, search_query=search_query)
+            results=round(pred[0],2)
+            search_query = request.form.get('search_query', '')         
+            return render_template('form.html',final_result=results)
     except:
 
         return render_template("form.html", no_value = 1)

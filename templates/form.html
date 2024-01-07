@@ -83,8 +83,17 @@
         <div style="clear:both;"></div>
         <input type="submit" value="Submit">
     </form>
-
-    {{final_result}}
+    <div id="prediction_result">
+        {% if final_result is defined %}
+            <h3>Prediction Result:</h3>
+            <p>{{ final_result }}</p>
+        {% elif no_value is defined %}
+            <p>No valid input provided.</p>
+        {% endif %}
+    </div>
+    <!-- Add this link in the head section of form.html -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  
 
 </body>
 </html>
